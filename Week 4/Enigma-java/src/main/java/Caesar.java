@@ -3,7 +3,7 @@ public class Caesar{
 public static void main(String[] args)
 {
       Caesar caesar = new Caesar();
-      System.out.print(caesar.ceasarShift("wyz", -1));
+      System.out.print(caesar.ceasarShift("wyz", -1)); //test
 }
    
    public String ceasarShift(String message, int shift)
@@ -11,15 +11,22 @@ public static void main(String[] args)
         String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         StringBuilder newString = new StringBuilder();
         
-        for(int i = 0; i < message.length(); i++)
+        for(int i = 0; i < message.length(); i++) //looping through the message
         {
-         char currentChar = message.toUpperCase().charAt(i);
-         int alphaIndex = alphabet.indexOf(currentChar);
-         alphaIndex = (alphaIndex + shift) % 26;
-         char newChar = alphabet.charAt(alphaIndex);
+         char currentChar = message.toUpperCase().charAt(i); //getting the char at a given index
+         int alphaIndex = alphabet.indexOf(currentChar);  //getting the position of that char in the alphabet
+         
+         alphaIndex = (alphaIndex + shift) % 25; //if shift > 25, it loops around the alphabet
+         if(alphaIndex<0)
+         {
+            alphaIndex += 25;
+         } //accounts for alphaIndex being negative, loops it back around
+         char newChar = alphabet.charAt(alphaIndex); //new char after shifting
          newString.append(newChar);
          shift++;
          }
          return newString.toString();
+
+         //haven't accounted for spaces or non characters yet
 }
 }
