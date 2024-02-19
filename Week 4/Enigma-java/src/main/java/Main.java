@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.io.*;
+//import java.io.*;
 
 public class Main {
     public static void main(String[] args)
     {
         // Obtain a reference to the console
-        Console con = System.console();
+        //Console con = System.console();
 
         System.out.println("Hello world");
 
