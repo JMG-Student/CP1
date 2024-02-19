@@ -31,6 +31,7 @@ public static void main(String[] args)
          newString.append(newChar);
       }
          shift++;
+         
          }
          return newString.toString();
 }
