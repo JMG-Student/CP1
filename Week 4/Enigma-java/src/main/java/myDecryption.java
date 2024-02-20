@@ -1,14 +1,14 @@
-public class myDecryption {
+public class myDecryption 
+{
 
    // main method
    public static void main(String[] args) 
    {
-   
       // create an instance of the myDecryption class
       myDecryption decryptCaesar = new myDecryption();
    
       // Call the decryptString
-      System.out.println(decryptCaesar.decryptString("ABC", 3));
+      System.out.println(decryptCaesar.decryptString("EGIK", 4));
    }
 
    // method to decrypt string using caesar cipher
@@ -18,7 +18,6 @@ public class myDecryption {
       // int myArray = ["EKMFLGDQVZNTOWYHXUSPAIBRCJ"];
       // Realised working with letters in a normal String format is more
       // straightforward than using an array
-   
       // find the index of each letter
       // check if character is indeed a letter and if not print an error message
       // take note of count?
@@ -27,7 +26,6 @@ public class myDecryption {
       // shift--;
    
       // NB!! All string characters must be in uppercase
-      // -- minus
       
       // Define the alphabet
       String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -43,7 +41,7 @@ public class myDecryption {
          char currentChar = Character.toUpperCase(msg.charAt(i));
       
          // Check if the character is a letter
-         if (Character.isLetter(currentChar)) 
+         if (Character.isLetter(currentChar)) //if it is a char, shift and append
          {
             // Find the index of the current character in the alphabet
             // index needs to be 0-25
@@ -60,20 +58,16 @@ public class myDecryption {
             decryptedMsg.append(decryptedChar);
          }
          
+         // need to account for non-characters in the string. They will be appended to the final string without being shifted
          else 
          {
-            // If the character entered is not a letter, append the value entered to the
-            // returned error message
-            // ends the program
-            return "Error Msg: A non-alphabetic character has been entered " + currentChar;
+            decryptedMsg.append(currentChar);         //if it's not a char, just append without shifting
          }
          
          // Decrement the shift for the next character
-         shift--;
+         shift++;
       }
-      // Return the decrypted message as a string
+    // Return the decrypted message as a string
       return decryptedMsg.toString();
-      
-      ///////OUTPUT: I keep getting XZB////////
    }
-} // end of class
+}
