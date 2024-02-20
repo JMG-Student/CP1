@@ -25,12 +25,12 @@ public class EnigmaMachine {
         EnigmaMachine machine = new EnigmaMachine();
 
         List<String> rotors = Arrays.asList(
-            "EKMFLGDQVZNTOWYHXUSPAIBRCJ",
+            "BDFHJLCPRTXVZNYEIWGAKMUSQO",
             "AJDKSIRUXBLHWTMCQGZNPYFVOE",
-            "BDFHJLCPRTXVZNYEIWGAKMUSQO"
+            "EKMFLGDQVZNTOWYHXUSPAIBRCJ"
         );
 
-        String encryptedMessage = "BDC";
+        String encryptedMessage = "KFDI";
 
         String decryptedMessage = machine.rotorDecrypt(encryptedMessage, rotors);
 
